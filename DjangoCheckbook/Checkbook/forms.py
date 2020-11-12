@@ -9,6 +9,6 @@ class AccountForm(ModelForm):
 
 
 class TransactionForm(ModelForm):
-    class Mets:
+    class Meta:
         model = Transaction
         fields = '__all__'

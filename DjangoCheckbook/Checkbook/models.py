@@ -9,9 +9,9 @@ Transaction_Choices = (
 
 
 class Account(models.Model):
-    first_name = models.CharField(max_length=50, default='first name')
-    last_name = models.CharField(max_length=50, default='last name2')
-    initial_deposit = models.DecimalField(max_digits=15, decimal_places=2, default=0.00)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    initial_deposit = models.DecimalField(max_digits=1000, decimal_places=2)
 
     Accounts = models.Manager()
 
@@ -21,9 +21,9 @@ class Account(models.Model):
         return self.first_name + ' ' + self.last_name
 
 class Transaction(models.Model):
-    date_Of_Transaction = models.DateField(default='2/14/1997')
+    date_Of_Transaction = models.DateField()
     type_Of_Transaction = models.CharField(choices=Transaction_Choices, max_length=10)
-    amount = models.FloatField(default=0.00)
+    amount = models.FloatField()
     description = models.CharField(max_length=100)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
 

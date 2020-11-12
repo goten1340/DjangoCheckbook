@@ -5,11 +5,9 @@
 	<div id="account-form">
 		<form method="POST">
 			{% csrf_token %}
-			{{form_as_p}}
+			{{form.as_p}}
 			<!-- Replace this with the Django Form -->
-			<label>First Name:</label><input type="text" name="firstName"><br>
-			<label>Last Name:</label><input type="text" name="lastName"><br>
-			<label>Initial Deposit:</label><input type="text" name="initialDeposit"><br><br>
+
 			<button id="new-account-button" type="submit" name="Save_Account">Create Account</button>
 		</form>
 		<br>
