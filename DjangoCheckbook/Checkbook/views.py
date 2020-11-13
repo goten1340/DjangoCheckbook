@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, get_object_or_404
-import django.http
 from .forms import AccountForm, TransactionForm
 from .models import Account, Transaction
 
@@ -26,7 +25,7 @@ def create_account(request):
 
 def balance(request, pk):
     account = get_object_or_404(Account, pk=pk)
-    transaction = Transaction.Transaction.filter(account = pk)
+    transactions = Transaction.Transaction.filter(account = pk)
     current_total = account.initial_deposit
     table_contents = { }
     for t in transactions:

@@ -3,7 +3,7 @@ from django.db.models import Model, FloatField
 
 # Create your models here.
 
-Transaction_Choices = (
+TransactionTypes = (
     ("Deposit", "Deposit"),
     ("Withdraw", "Withdraw"),)
 
@@ -21,9 +21,9 @@ class Account(models.Model):
         return self.first_name + ' ' + self.last_name
 
 class Transaction(models.Model):
-    date_Of_Transaction = models.DateField()
-    type_Of_Transaction = models.CharField(choices=Transaction_Choices, max_length=10)
-    amount = models.FloatField()
+    date = models.DateField()
+    type = models.CharField(choices=TransactionTypes, max_length=10)
+    amount = models.DecimalField(max_digits=15, decimal_places=2)
     description = models.CharField(max_length=100)
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
 
