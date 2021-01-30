@@ -1,0 +1,1 @@
+# DjangoCheckbook: Learned how to use a specialized enviroments to create and write apps on python. I did this by creating a virtual enviroment folder. Also had got some practice in modifying the project on the console. Worked on database management. Learned how to register models so they can be called upon for use. also practiced my MVC but with Python
